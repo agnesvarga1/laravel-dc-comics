@@ -5,7 +5,7 @@
 <main>
  <h1 class="text-primary text-center"> Comic List</h1>
  <div class="container">
-  <a href="">  <button class="btn btn-primary my-5">ADD COMIC</button></a>
+  <a href="{{route('comics.create')}}">  <button class="btn btn-primary my-5">ADD COMIC</button></a>
     <table class="table">
         <thead>
           <tr>
