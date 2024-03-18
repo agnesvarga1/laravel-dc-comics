@@ -1,0 +1,78 @@
+@use "../partials/variables" as *;
+#wrapper {
+    background-image: url("../img/footer-bg.jpg");
+    background-size: cover;
+
+    color: #fff;
+    .container-va {
+        width: 75%;
+        margin: 0 auto;
+        padding-block: 4rem;
+        display: flex;
+        background: transparent;
+
+        .left-side {
+            width: 50%;
+            display: flex;
+            gap: 25px;
+            line-height: 1.5;
+            h3 {
+                text-transform: uppercase;
+                margin-block: 0.8rem;
+            }
+            li {
+                a {
+                    font-size: 14px;
+                    color: #fff;
+                    font-weight: 100;
+                    opacity: 0.7;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .right-side {
+            width: 50%;
+            position: relative;
+            figure {
+                position: absolute;
+                top: 50%;
+                transform: translatey(-50%);
+            }
+        }
+    }
+}
+footer {
+    background-color: $dark-gray;
+    position: absolute;
+    width: 100%;
+    .footer-container {
+        width: 75%;
+        margin: 0 auto;
+        padding-block: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        button {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 3px solid $blue-main;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        div {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            h2 {
+                color: $blue-main;
+                text-transform: uppercase;
+            }
+            ul {
+                display: flex;
+                gap: 20px;
+            }
+        }
+    }
+}

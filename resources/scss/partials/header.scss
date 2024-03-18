@@ -1,0 +1,40 @@
+header {
+    background-color: #fff;
+    nav {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+        figure {
+            padding-block: 10px;
+        }
+        ul {
+            height: 110px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            li {
+                height: inherit;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    height: inherit;
+                    color: #303030;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    &:hover {
+                        color: #0282f9;
+                    }
+                }
+            }
+        }
+        .active {
+            border-bottom: 5px solid #0282f9;
+            color: #0282f9;
+        }
+    }
+}

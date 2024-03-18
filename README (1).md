@@ -6,6 +6,3 @@
 4. npm install
 5. npm run dev
 6. php artisan serve
-
-
-
