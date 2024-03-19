@@ -16,6 +16,7 @@
             <th scope="col">Serie</th>
             <th scope="col">Sale Date</th>
             <th scope="col">Comic Type</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
 
@@ -39,7 +40,12 @@
                 <td>{{$comic->sale_date}}</td>
                 <td>{{$comic->type}}</td>
                 <td class="d-flex "><button class="btn btn-warning p-1  m-1 ">Edit</button>
-                    <button class="btn btn-danger p-1 m-1">Delete</button>
+                    <form action="{{route('comics.destroy',$comic->id)}}" method="POST">
+                        @csrf
+                        @method("Delete")
+                        <button type="submit" class="btn btn-danger p-1 m-1">Delete</button>
+                    </form>
+
                 </td>
             </tr>
             @endforeach
