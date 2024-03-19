@@ -33,7 +33,7 @@ class ComicController extends Controller
 
 
         $newComic = new Comic();
-         $newComic->fill($formData);
+         $newComic->fill($formData);//collegato a $fillable in Comic model
 
         $newComic->save();
 
@@ -54,7 +54,9 @@ class ComicController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $comic=Comic::findOrFail($id);
+
+        return view('pages.comicsView.edit',compact('comic'));
     }
 
     /**
@@ -62,7 +64,11 @@ class ComicController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $formData=$request->all();//all data from edit.blade form
+        $comic = Comic::find($id);
+        $comic->update($formData);
+        return view("pages.comicsView.showComic",compact('comic'));
+
     }
 
     /**

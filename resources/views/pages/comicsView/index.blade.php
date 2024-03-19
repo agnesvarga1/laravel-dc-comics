@@ -39,7 +39,7 @@
                 <td>{{$comic->series}}</td>
                 <td>{{$comic->sale_date}}</td>
                 <td>{{$comic->type}}</td>
-                <td class="d-flex "><button class="btn btn-warning p-1  m-1 ">Edit</button>
+                <td class="d-flex "><a href="{{route('comics.edit',$comic->id)}}"><button class="btn btn-warning p-1  m-1 ">Edit</button></a>
                     <form action="{{route('comics.destroy',$comic->id)}}" method="POST">
                         @csrf
                         @method("Delete")
