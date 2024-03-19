@@ -3,7 +3,7 @@
 @section('title', 'DC Comics | Comics')
 @section('content')
 <main>
- <h1 class="text-primary text-center"> Comic List</h1>
+ <h1 class="text-primary text-center mt-4"> Comic List</h1>
  <div class="container">
   <a href="{{route('comics.create')}}">  <button class="btn btn-primary my-5">ADD COMIC</button></a>
     <table class="table">
