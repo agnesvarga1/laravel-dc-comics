@@ -39,12 +39,19 @@
                 <td>{{$comic->series}}</td>
                 <td>{{$comic->sale_date}}</td>
                 <td>{{$comic->type}}</td>
-                <td class="d-flex "><a href="{{route('comics.edit',$comic->id)}}"><button class="btn btn-warning p-1  m-1 ">Edit</button></a>
-                    <form action="{{route('comics.destroy',$comic->id)}}" method="POST">
-                        @csrf
-                        @method("Delete")
-                        <button type="submit" class="btn btn-danger p-1 m-1">Delete</button>
-                    </form>
+                <td class="d-flex align-items-center justify-content-center fs-6">
+
+                    <button type="button" class="btn btn-warning m-1">
+                        <a class="text-dark" href="{{route('comics.edit',$comic->id)}}"> Edit</a>
+                        </button>
+
+
+                        <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Delete
+                           </button>
+
+
+
 
                 </td>
             </tr>
@@ -53,6 +60,28 @@
 
         </tbody>
       </table>
+      <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h4>Are you sure want to delete this item?</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <form action="{{route('comics.destroy',$comic->id)}}" method="POST">
+            @csrf
+            @method("Delete")
+            <button type="submit" class="btn btn-danger p-1 m-1">Delete</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
  </div>
 
 
