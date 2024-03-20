@@ -35,7 +35,7 @@
                 <td>  <a href="{{ route('comics.show', ['comic' => $comic['id'] ] ) }}"> {{$comic->title}}</a></td>
                 {{-- <td>{{$comic->description}}</td> --}}
                 <td>{{$comic->thumb}}</td>
-                <td>{{$comic->price}}</td>
+                <td>${{$comic->price}}</td>
                 <td>{{$comic->series}}</td>
                 <td>{{$comic->sale_date}}</td>
                 <td>{{$comic->type}}</td>
