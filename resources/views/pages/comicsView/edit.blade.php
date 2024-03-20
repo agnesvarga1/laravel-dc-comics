@@ -3,7 +3,7 @@
 @section('title', 'DC Comics | Add New Comic')
 @section('content')
 <main>
-    {{-- https://unsplash.com/photos/the-walking-dead-comic-book-d2Py_uhXJQo --}}
+
     <h2 class="text-center m-2">Modify Comic</h2>
 <div class="container">
     <form action="{{route('comics.update',$comic->id )}}" method="POST">
@@ -13,11 +13,16 @@
             <label for="title" class="form-label">Title</label>
             <input
                 type="text"
-                class="form-control"
+                class=""
                 name="title"
                 id="title"
                 value={{old('title') ?? $comic->title}}
+                class="form-control @error('title') is-invalid @enderror"
+
             />
+            @error('title')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>

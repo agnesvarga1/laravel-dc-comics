@@ -12,10 +12,15 @@
             <label for="title" class="form-label">Title</label>
             <input
                 type="text"
-                class="form-control"
                 name="title"
                 id="title"
+                class="form-control @error('title') is-invalid @enderror"
+
+
             />
+            @error('title')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
@@ -51,7 +56,7 @@
         <div class="mb-3">
             <label for="sale_date" class="form-label">Date of sale</label>
             <input
-                type="text"
+                type="date"
                 class="form-control"
                 name="sale_date"
                 id="sale_date"

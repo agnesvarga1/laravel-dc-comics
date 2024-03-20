@@ -29,6 +29,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(['title'=>'required']);
         $formData = $request->all();
 
 
@@ -64,6 +65,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate(['title'=>'required']);
         $formData=$request->all();//all data from edit.blade form
         $comic = Comic::find($id);
         $comic->update($formData);
