@@ -29,8 +29,17 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['title'=>'required']);
-        $formData = $request->all();
+
+       $request->validate([
+        '*'=>'required',
+        'sale_date' =>'date | before_or_equal:today',
+        'price' => 'numeric|regex:/^\d+(\.\d{1,2})?$/',
+        'thumb' =>  ['regex:/^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*$/'],
+        ]);
+
+
+
+       $formData = $request->all();
 
 
         $newComic = new Comic();
@@ -65,7 +74,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate(['title'=>'required']);
+        //$request->validate(['title'=>'required']);
+        $request->validate(['*'=>'required']);
         $formData=$request->all();//all data from edit.blade form
         $comic = Comic::find($id);
         $comic->update($formData);

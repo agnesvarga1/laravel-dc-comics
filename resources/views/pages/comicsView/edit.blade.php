@@ -6,6 +6,15 @@
 
     <h2 class="text-center m-2">Modify Comic</h2>
 <div class="container">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error )
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="{{route('comics.update',$comic->id )}}" method="POST">
         @csrf
         @method('PUT')
@@ -17,12 +26,12 @@
                 name="title"
                 id="title"
                 value={{old('title') ?? $comic->title}}
-                class="form-control @error('title') is-invalid @enderror"
-
+                class="form-control"
+                {{-- @error('title') is-invalid @enderror --}}
             />
-            @error('title')
+            {{-- @error('title')
                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            @enderror --}}
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
